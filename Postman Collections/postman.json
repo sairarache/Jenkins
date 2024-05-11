@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "b563de78-e23d-4545-922a-071e34103129",
+		"name": "resreq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"id": "396a33d5-e45f-47b3-86c0-4452f15332c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "93706bbd-e550-410e-8dd7-386a6c30319a",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "3247267b-cf98-460f-a94f-3a6fe6b4943f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "abc",
+						"value": "{{$randomInt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"job\": \"{{job}}\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Copy",
+			"id": "f868329a-b725-46f9-9687-f83827512fab",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "https://reqres.in/api/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "put",
+			"id": "5b7273f1-c294-4518-984e-57ca4aab4f75",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\",\r\n    \"updatedAt\": \"2024-05-02T15:24:39.304Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch",
+			"id": "517fd162-b840-4730-88cf-1208d9f77b47",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Signma\",\r\n    \"job\": \"zion resident\",\r\n    \"updatedAt\": \"2024-05-02T15:24:39.304Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/users/2"
+			},
+			"response": []
+		}
+	]
+}
